@@ -1,0 +1,5 @@
+<Project>
+    <PropertyGroup>
+        <BaseIntermediateOutputPath>$(USERPROFILE)\RiderProjects\gmafffff.AssistantSurveyor\Service\obj\</BaseIntermediateOutputPath>
+    </PropertyGroup>
+</Project>
