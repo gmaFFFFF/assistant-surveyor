@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gmafffff.AssistantSurveyor.Service", "gmafffff.AssistantSurveyor.Service\gmafffff.AssistantSurveyor.Service.csproj", "{BF3880AF-A85C-47F4-9C3F-F671C643A7EC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gmafffff.AssistantSurveyor.Post", "gmafffff.AssistantSurveyor.Post\gmafffff.AssistantSurveyor.Post.csproj", "{828F9167-24E9-49C1-BDE2-A6EC6ED6E020}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{BF3880AF-A85C-47F4-9C3F-F671C643A7EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BF3880AF-A85C-47F4-9C3F-F671C643A7EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BF3880AF-A85C-47F4-9C3F-F671C643A7EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{828F9167-24E9-49C1-BDE2-A6EC6ED6E020}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{828F9167-24E9-49C1-BDE2-A6EC6ED6E020}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{828F9167-24E9-49C1-BDE2-A6EC6ED6E020}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{828F9167-24E9-49C1-BDE2-A6EC6ED6E020}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
