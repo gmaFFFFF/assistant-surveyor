@@ -36,7 +36,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\gmafffff.AssistantSurveyor.Post\gmafffff.AssistantSurveyor.Post.csproj"/>
+        <ProjectReference Include="..\gmafffff.AssistantSurveyor.FilePost\gmafffff.AssistantSurveyor.FilePost.csproj" />
     </ItemGroup>
 
 </Project>

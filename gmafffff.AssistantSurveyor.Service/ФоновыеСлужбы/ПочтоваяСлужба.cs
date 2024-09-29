@@ -1,9 +1,9 @@
-using gmafffff.AssistantSurveyor.Post;
+using gmafffff.AssistantSurveyor.FilePost;
 
 namespace gmafffff.AssistantSurveyor.Service.ФоновыеСлужбы;
 
 public class ПочтоваяСлужба<Т> : BackgroundService
-    where Т : ИПочта {
+    where Т : ИФайловаяПочта {
     private readonly Т _почта;
     private readonly IHostApplicationLifetime _lifetime;
     private readonly ILogger<ПочтоваяСлужба<Т>> _logger;

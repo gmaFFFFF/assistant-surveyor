@@ -1,6 +1,6 @@
-﻿namespace gmafffff.AssistantSurveyor.Post;
+﻿namespace gmafffff.AssistantSurveyor.FilePost;
 
-public interface ИПочта {
+public interface ИФайловаяПочта {
     string Название { get; }
     Task СтартАсинх(CancellationToken токенОстановки);
 }

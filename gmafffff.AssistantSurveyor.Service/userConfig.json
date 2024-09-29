@@ -1,0 +1,13 @@
+﻿{
+  "Почта": {
+    "ПочтовыеЯщики": [
+      {
+        "НаблюдаемаяПапка": "%userprofile%\\Downloads",
+        "ПапкиРезультата": [
+          "%userprofile%\\Desktop\\extracts-downloaded",
+          "%userprofile%\\Downloads\\sort"
+        ]
+      }
+    ]
+  }
+}

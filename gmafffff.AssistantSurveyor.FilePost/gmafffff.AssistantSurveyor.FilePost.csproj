@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <BaseOutputPath>$(USERPROFILE)\RiderProjects\gmafffff.AssistantSurveyor\FilePost\bin\</BaseOutputPath>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Akka" Version="1.5.28" />
+        <PackageReference Include="LanguageExt.Sys" Version="5.0.0-beta-22" />
+        <PackageReference Include="Light.GuardClauses" Version="11.0.0" />
+        <PackageReference Include="Microsoft.Extensions.Logging" Version="8.0.0"/>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Сообщения\" />
+    </ItemGroup>
+
+</Project>

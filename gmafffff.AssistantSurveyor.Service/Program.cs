@@ -1,5 +1,6 @@
-using gmafffff.AssistantSurveyor.Post;
+using gmafffff.AssistantSurveyor.FilePost;
 using gmafffff.AssistantSurveyor.Service.ФоновыеСлужбы;
+using gmafffff.AssistantSurveyor.Service.Конфигурация;
 
 namespace gmafffff.AssistantSurveyor.Service;
 
@@ -7,8 +8,11 @@ public class Program {
     public static void Main(string[] args) {
         var builder = Host.CreateApplicationBuilder(args);
 
-        builder.Services.AddSingleton<ПочтаЕгрн>();
-        builder.Services.AddHostedService<ПочтоваяСлужба<ПочтаЕгрн>>();
+        builder.Configuration.ДобавьПользовательскиеФайлыКонфигурации(builder.Configuration);
+
+        builder.Services.ДобавьОпцииКонфигурации(builder.Configuration);
+        builder.Services.AddSingleton<ФайловаяПочтаЕгрн>();
+        builder.Services.AddHostedService<ПочтоваяСлужба<ФайловаяПочтаЕгрн>>();
 
         var host = builder.Build();
         host.Run();
