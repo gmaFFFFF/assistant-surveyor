@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gmafffff.AssistantSurveyor.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gmafffff.AssistantSurveyor.FilePost", "gmafffff.AssistantSurveyor.FilePost\gmafffff.AssistantSurveyor.FilePost.csproj", "{828F9167-24E9-49C1-BDE2-A6EC6ED6E020}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Напильник", "..\gmafffff.net.starterKit\Напильник\Напильник.csproj", "{A044F5A5-C5C4-4DFD-A714-212D3E4762D4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{828F9167-24E9-49C1-BDE2-A6EC6ED6E020}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{828F9167-24E9-49C1-BDE2-A6EC6ED6E020}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{828F9167-24E9-49C1-BDE2-A6EC6ED6E020}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A044F5A5-C5C4-4DFD-A714-212D3E4762D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A044F5A5-C5C4-4DFD-A714-212D3E4762D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A044F5A5-C5C4-4DFD-A714-212D3E4762D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A044F5A5-C5C4-4DFD-A714-212D3E4762D4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

@@ -18,7 +18,7 @@ public class ПочтоваяСлужба<Т> : BackgroundService
         try {
             await ЖдатьЗапускПриложения(_lifetime, токенОстановки);
         }
-        catch (OperationCanceledException e) {
+        catch (OperationCanceledException) {
             _logger.LogInformation("Служба: {Служба} {Событие}", _почта.Название, "Запуск отменен");
             return;
         }
@@ -29,7 +29,7 @@ public class ПочтоваяСлужба<Т> : BackgroundService
             try {
                 await _почта.СтартАсинх(токенОстановки);
             }
-            catch (OperationCanceledException e) {
+            catch (OperationCanceledException) {
                 _logger.LogInformation("Служба: {Служба} {Событие}", _почта.Название, "Остановлена");
                 throw;
             }
