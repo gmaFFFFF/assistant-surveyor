@@ -12,10 +12,6 @@ public sealed partial class Почта : ReceiveActor {
 
     private readonly ILoggingAdapter _log = Context.GetLogger();
 
-    public Почта() {
-      
-    }
-
     public static Props Props(int magicNumber) {
         return Akka.Actor.Props.Create<Почта>();
     }
