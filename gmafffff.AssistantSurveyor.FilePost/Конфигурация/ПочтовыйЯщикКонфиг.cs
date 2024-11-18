@@ -1,6 +1,6 @@
 ﻿namespace gmafffff.AssistantSurveyor.FilePost.Конфигурация;
 
-public class ПочтовыйЯщик {
+public class ПочтовыйЯщикКонфиг {
     public string НаблюдаемаяПапка { get; set; } = string.Empty;
     public List<string> ПапкиРезультата { get; set; } = [];
 

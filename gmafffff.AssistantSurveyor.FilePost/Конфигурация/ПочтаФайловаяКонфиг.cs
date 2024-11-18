@@ -1,7 +1,7 @@
 namespace gmafffff.AssistantSurveyor.FilePost.Конфигурация;
 
-public class ПочтаФайловаяОпции {
-    public const string Секция = "ПочтаФайловая";
+public class ПочтаФайловаяКонфиг {
+    public static readonly string Секция = nameof(ПочтаФайловаяКонфиг).Replace("Конфиг", "");
 
     /// <summary>
     ///     Задержка, помогающая игнорировать промежуточные записи блоков файла на диск

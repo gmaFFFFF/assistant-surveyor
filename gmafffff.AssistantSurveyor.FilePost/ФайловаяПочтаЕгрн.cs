@@ -5,10 +5,10 @@ using Microsoft.Extensions.Options;
 namespace gmafffff.AssistantSurveyor.FilePost;
 
 public class ФайловаяПочтаЕгрн : ИФайловаяПочта {
-    private readonly ПочтовыеЯщикиОпции _почтовыеЯщикиОпции;
+    private readonly ПочтовыеЯщикиКонфиг _почтовыеЯщикиОпции;
     private readonly ILogger<ФайловаяПочтаЕгрн> _logger;
 
-    public ФайловаяПочтаЕгрн(ILogger<ФайловаяПочтаЕгрн> logger, IOptions<ПочтовыеЯщикиОпции> ПочтовыеЯщикиОпции) {
+    public ФайловаяПочтаЕгрн(ILogger<ФайловаяПочтаЕгрн> logger, IOptions<ПочтовыеЯщикиКонфиг> ПочтовыеЯщикиОпции) {
         _logger = logger;
         _почтовыеЯщикиОпции = ПочтовыеЯщикиОпции.Value;
     }

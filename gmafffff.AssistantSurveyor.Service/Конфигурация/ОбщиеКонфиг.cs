@@ -1,7 +1,7 @@
 ﻿namespace gmafffff.AssistantSurveyor.Service.Конфигурация;
 
-public class ОбщиеОпции {
-    public const string Секция = "Общие";
+public class ОбщиеКонфиг {
+    public static readonly string Секция = nameof(ОбщиеКонфиг).Replace("Конфиг", "");
     public List<string> КонфигФайлы { get; set; } = [];
 
     public IEnumerable<string> ДайКонфигФайлы() {

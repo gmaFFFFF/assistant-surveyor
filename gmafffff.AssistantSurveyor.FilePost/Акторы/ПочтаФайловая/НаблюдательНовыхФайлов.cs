@@ -68,8 +68,8 @@ public partial class НаблюдательНовыхФайлов : ReceiveActor
 
     private void ОбработайФайловыеСобытия(ВозниклиФайловыеСобытия уведомление) {
         var настройки = _scope.ServiceProvider
-            .GetService<IOptionsSnapshot<ПочтаФайловаяОпции>>()
-            ?.Value ?? new ПочтаФайловаяОпции();
+            .GetService<IOptionsSnapshot<ПочтаФайловаяКонфиг>>()
+            ?.Value ?? new ПочтаФайловаяКонфиг();
         var задержка = настройки.ЗадержкаПередОтправкойФайла;
         var сейчас = DateTime.UtcNow;
 
@@ -196,8 +196,8 @@ public partial class НаблюдательНовыхФайлов : ReceiveActor
     public static IObservable<IList<FileSystemEventArgs>> СоздатьФайловыйНаблюдатель(Ориентировка ориентировка,
         IServiceScope scope) {
         var настройки = scope.ServiceProvider
-            .GetService<IOptionsSnapshot<ПочтаФайловаяОпции>>()
-            ?.Value ?? new ПочтаФайловаяОпции();
+            .GetService<IOptionsSnapshot<ПочтаФайловаяКонфиг>>()
+            ?.Value ?? new ПочтаФайловаяКонфиг();
         var поставщикПланировщиковRx = scope.ServiceProvider
             .GetService<ИПоставляетПланировщики>() ?? new ПоставляетПланировщики();
         var дайFileSystemWatcher = (IServiceScope scope) => scope.ServiceProvider
