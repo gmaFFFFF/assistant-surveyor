@@ -1,0 +1,5 @@
+<Project>
+    <PropertyGroup>
+        <BaseIntermediateOutputPath>$(USERPROFILE)\RiderProjects\gmafffff.AssistantSurveyor\FilePost.Tests\obj\</BaseIntermediateOutputPath>
+    </PropertyGroup>
+</Project>
