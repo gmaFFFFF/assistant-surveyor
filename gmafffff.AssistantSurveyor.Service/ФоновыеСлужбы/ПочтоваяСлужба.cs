@@ -2,52 +2,44 @@ using gmafffff.AssistantSurveyor.FilePost;
 
 namespace gmafffff.AssistantSurveyor.Service.ФоновыеСлужбы;
 
-public class ПочтоваяСлужба<Т> : BackgroundService
+public class ПочтоваяСлужба<Т>(ILogger<ПочтоваяСлужба<Т>> logger, IHostApplicationLifetime lifetime, Т почта)
+    : BackgroundService
     where Т : ИФайловаяПочта {
-    private readonly Т _почта;
-    private readonly IHostApplicationLifetime _lifetime;
-    private readonly ILogger<ПочтоваяСлужба<Т>> _logger;
-
-    public ПочтоваяСлужба(ILogger<ПочтоваяСлужба<Т>> logger, IHostApplicationLifetime lifetime, Т почта) {
-        _logger = logger;
-        _lifetime = lifetime;
-        _почта = почта;
-    }
+    private readonly Т _почта = почта;
 
     protected override async Task ExecuteAsync(CancellationToken токенОстановки) {
         try {
-            await ЖдатьЗапускПриложения(_lifetime, токенОстановки);
+            await ЖдатьЗапускПриложения(lifetime, токенОстановки);
         }
         catch (OperationCanceledException) {
-            _logger.LogInformation("Служба: {Служба} {Событие}", _почта.Название, "Запуск отменен");
+            logger.LogInformation("Служба: {Служба} {Событие}", _почта.Название, "Запуск отменен");
             return;
         }
 
         while (!токенОстановки.IsCancellationRequested) {
-            _logger.LogInformation("Служба: {Служба} {Событие}", _почта.Название, "Запущена");
+            logger.LogInformation("Служба: {Служба} {Событие}", _почта.Название, "Запущена");
 
             try {
                 await _почта.СтартАсинх(токенОстановки);
             }
             catch (OperationCanceledException) {
-                _logger.LogInformation("Служба: {Служба} {Событие}", _почта.Название, "Остановлена");
+                logger.LogInformation("Служба: {Служба} {Событие}", _почта.Название, "Остановлена");
                 throw;
             }
             catch (Exception e) {
-                _logger.LogWarning(e, "Служба: {Служба} {Событие}", _почта.Название, "Завершилась с ошибкой");
+                logger.LogWarning(e, "Служба: {Служба} {Событие}", _почта.Название, "Завершилась с ошибкой");
 
                 // TODO: Обработка ошибки неуспешного запуска
             }
 
             // Перезапуск
-            await Task.Delay(1000, токенОстановки);
+            await Task.Delay(2000, токенОстановки);
         }
     }
 
-    private static async Task
-        ЖдатьЗапускПриложения(IHostApplicationLifetime lifetime, CancellationToken токенОстановки) {
+    private static async Task ЖдатьЗапускПриложения(IHostApplicationLifetime lifetime,
+        CancellationToken токенОстановки) {
         var tcs = new TaskCompletionSource();
-        var cts = new CancellationTokenSource();
 
         using var регСтарт = lifetime.ApplicationStarted.Register(() => tcs.TrySetResult());
         using var регОстановка = токенОстановки.Register(() => tcs.TrySetCanceled(токенОстановки));
